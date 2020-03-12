@@ -399,3 +399,7 @@ MigrationBackup/
 
 # End of https://www.gitignore.io/api/fsharp,VisualStudioCode,VisualStudio,Vim
 
+
+data/*
+!data/BC.DAT
+.ionide
