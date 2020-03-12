@@ -6,7 +6,7 @@ open System
 open System.IO 
 open WorldWideAstronomy
 
-let fpath = Path.Combine(__SOURCE_DIRECTORY__, "../../data/bc.dat")
+let fpath = Path.Combine(__SOURCE_DIRECTORY__, "../../data/bcalt.dat")
 printfn "%s" fpath
 
 let fi = FileInfo(fpath)
@@ -23,7 +23,7 @@ printfn "JD is %f" jd2
 let np = int(jd2 - jd1) + 1 
 printfn "Number of predictions %d" np
 
-//Execute loop between  two dates and compaare results
+//Execute loop between  two dates and compare results
 let e = [jd1..1.0..jd2]
 printfn "Number if items %d" (e.Length)
 

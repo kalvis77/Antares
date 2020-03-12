@@ -1,6 +1,6 @@
 #I __SOURCE_DIRECTORY__
 #r "netstandard"
-#r @"..\wwa\WorldWideAstronomy\WWA.Core\bin\Debug\netcoreapp3.0\WWA.Core.dll"
+#r @"..\..\..\wwa\WorldWideAstronomy\WWA.Core\bin\Debug\netcoreapp3.0\WWA.Core.dll"
 
 open System
 open System.IO
@@ -10,7 +10,7 @@ let pvb = Array2D.zeroCreate 2 3
 let pvh = Array2D.zeroCreate 2 3
 
 let writeBC (jd1: float) (jd2: float) =
-    let fpath = Path.Combine(__SOURCE_DIRECTORY__, "data/bcalt.dat")
+    let fpath = Path.Combine(__SOURCE_DIRECTORY__, "../../data/bcalt.dat")
     let w = new BinaryWriter(File.Open(fpath, FileMode.Create, FileAccess.Write, FileShare.Read))
     w.BaseStream.Seek(0L, SeekOrigin.Begin) |> ignore
     w.Write(jd1)
