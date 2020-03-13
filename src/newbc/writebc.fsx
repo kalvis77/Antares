@@ -24,7 +24,8 @@ let writeBC (jd1: float) (jd2: float) =
     e
     |> List.iter (fun j ->
         WWA.wwaEpv00 (j, 0.0, pvh, pvb) |> ignore
-        let sb = Array.map2 (fun x y -> x - y) pvb.[0, *] pvh.[0, *]
+        // let sb = Array.map2 (fun x y -> x - y) pvb.[0, *] pvh.[0, *]
+        let sb = Array.map2 (-) pvb.[0, *] pvh.[0, *]
 
         let pbi = Array.map (fun x -> int32 (x * 1e9)) pvb.[0, *]
         let vbi = Array.map (fun x -> int32 (x * 1e9)) pvb.[1, *]
@@ -37,6 +38,6 @@ let writeBC (jd1: float) (jd2: float) =
     ()
 
 // Jan 1, 2020, 2458849.500000
-// Jan 1, 20230, 2462502.500000
+// Jan 1, 2030, 2462502.500000
 
 writeBC 2458849.500000 2462502.500000
