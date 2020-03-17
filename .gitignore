@@ -402,4 +402,5 @@ MigrationBackup/
 
 data/*
 !data/BC.DAT
+!data/RTS2006
 .ionide
