@@ -405,3 +405,4 @@ data/*
 !data/RTS2006
 !data/Input
 .ionide
+.fake
