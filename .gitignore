@@ -406,3 +406,5 @@ data/*
 !data/Input
 .ionide
 .fake
+
+*.inp
