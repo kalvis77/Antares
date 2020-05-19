@@ -24,6 +24,7 @@ open System.Text
 [<Literal>]
 let CEOL = "\r\n"
 let  c = 299792458.0
+// todo: add path here
 let fileName = "calibr.inp"
 let cospar = "7603901" + CEOL
 let stationId = "01884" + CEOL
