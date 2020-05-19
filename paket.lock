@@ -1,17 +1,19 @@
+GENERATE-LOAD-SCRIPTS: ON
 STORAGE: NONE
 RESTRICTION: || (== netcoreapp3.1) (== netstandard2.0) (== netstandard2.1)
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    FSharp.Core (4.7)
-    MathNet.Numerics (4.9)
-    MathNet.Numerics.FSharp (4.9)
+    FSharp.Core (4.7.1)
+    MathNet.Numerics (4.9.1)
+    MathNet.Numerics.FSharp (4.9.1)
       FSharp.Core (>= 4.3.3)
-      MathNet.Numerics (>= 4.9)
-      System.Runtime (>= 4.3)
+      MathNet.Numerics (>= 4.9.1)
+      System.Runtime (>= 4.3.1)
       System.Runtime.Numerics (>= 4.3)
       System.Security.Cryptography.Algorithms (>= 4.3.1)
-    Microsoft.NETCore.Platforms (3.1)
+    Microsoft.NETCore.Platforms (3.1.1)
     Microsoft.NETCore.Targets (3.1)
+    Newtonsoft.Json (12.0.3)
     runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.3)
     runtime.debian.9-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.3)
     runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl (4.3.3)
@@ -171,3 +173,6 @@ NUGET
       Microsoft.NETCore.Platforms (>= 1.1)
       Microsoft.NETCore.Targets (>= 1.1)
       System.Runtime (>= 4.3)
+    XPlot.Plotly (3.0.1)
+      FSharp.Core (>= 4.5.2)
+      Newtonsoft.Json (>= 12.0.2)

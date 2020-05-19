@@ -408,3 +408,5 @@ data/*
 .fake
 
 *.inp
+
+.paket/load
