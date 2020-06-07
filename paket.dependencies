@@ -5,6 +5,7 @@ storage: none
 framework: netcore3.1, netstandard2.0, netstandard2.1
 
 nuget MathNet.Numerics.FSharp
-nuget Microsoft.ML
-nuget WinSCP 5.17.6
-nuget XPlot.Plotly
+nuget Microsoft.ML ~> 1.5
+nuget WinSCP ~> 5.17.6
+nuget XPlot.Plotly ~> 3.0.1
+nuget FluentFtp ~> 32.4.3
