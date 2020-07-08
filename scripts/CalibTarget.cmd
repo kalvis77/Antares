@@ -1,3 +1,3 @@
 @ECHO off
 rem add full pathes
-dotnet fsi CalibrDelay.fsx %1
+dotnet fsi CalibTarget.fsx %1

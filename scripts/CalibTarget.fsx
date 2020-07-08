@@ -8,7 +8,7 @@
 //
 // windows line ending
 // the rest of file is not used in RTS2006
-// first term is delay in ns?
+// first term is distance in Mm, but script accepts input in ns
 // the rest is just zeros
 
 open System
@@ -25,7 +25,7 @@ open System.Text
 let CEOL = "\r\n"
 let  c = 299792458.0
 // todo: add path here
-let fileName = "calibr.inp"
+let fileName = Path.Combine("C:/work","calibr.inp")
 let cospar = "7603901" + CEOL
 let stationId = "01884" + CEOL
 
