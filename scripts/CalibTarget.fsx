@@ -8,7 +8,7 @@
 //
 // windows line ending
 // the rest of file is not used in RTS2006
-// first term is distance in Mm, but script accepts input in ns
+// first term is distance squared, but script accepts input in ns
 // the rest is just zeros
 
 open System
@@ -29,11 +29,17 @@ let fileName = Path.Combine("C:/work","calibr.inp")
 let cospar = "7603901" + CEOL
 let stationId = "01884" + CEOL
 
+let sqr (x: float) = x * x
+
 let args : string array = fsi.CommandLineArgs |> Array.tail
-let delay = match args.Length with
-            | 1  -> args.[0] |> float |> ( * ) (c * 1e-15) 
-            | _ -> 100.0 * c * 1e-15
-printfn "Delay = %f ns" delay            
+let d, d2 = match args.Length with
+            | 1  -> 
+                let dist = (args.[0] |> float ) * c * 1e-9 / 2.0
+                dist, sqr dist
+            | _ ->
+                let dist = 100.0 * c * 1e-9 / 2.0
+                dist, sqr dist
+printfn "Equivalent target dist = %f  m" d            
 let cf = Array.zeroCreate<float> 6 
 let epoch = DateTime.Now.ToString("yyyy'-'MM'-'dd") + CEOL
 printfn "Today's date %s" epoch
@@ -49,7 +55,7 @@ let bw = new BinaryWriter(File.Open(fileName, FileMode.Create))
 let data = Encoding.ASCII.GetBytes(cospar + stationId + epoch + t1 + t2)
 bw.Write(data)
 bw.Write(tc0)
-bw.Write(delay)
+bw.Write(d2)
 let buffer = Array.zeroCreate<byte> 48
 Buffer.BlockCopy(cf, 0, buffer, 0, 48) 
 bw.Write(buffer)
